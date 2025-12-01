@@ -1,0 +1,7 @@
+{
+  "name": "app-overflow",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
