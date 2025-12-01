@@ -1,0 +1,319 @@
+<ion-content [fullscreen]="true" [scrollY]="true">
+  <div class="login-container">
+    <!-- Cloud Background -->
+    <div class="cloud-background">
+      <div class="background-overlay"></div>
+
+      <!-- Nuvens SVG -->
+      <svg class="clouds-svg" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="cloud-blur">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
+          </filter>
+        </defs>
+
+        <!-- Nuvem 1 - topo esquerda -->
+        <ellipse
+          cx="8%"
+          cy="12%"
+          rx="60"
+          ry="30"
+          fill="#d8d8d8"
+          filter="url(#cloud-blur)"
+          opacity="0.5"
+        />
+        <ellipse
+          cx="10%"
+          cy="10%"
+          rx="45"
+          ry="25"
+          fill="#d8d8d8"
+          filter="url(#cloud-blur)"
+          opacity="0.4"
+        />
+
+        <!-- Nuvem 2 - topo direita -->
+        <ellipse
+          cx="88%"
+          cy="8%"
+          rx="50"
+          ry="25"
+          fill="#d8d8d8"
+          filter="url(#cloud-blur)"
+          opacity="0.4"
+        />
+        <ellipse
+          cx="90%"
+          cy="6%"
+          rx="35"
+          ry="20"
+          fill="#d8d8d8"
+          filter="url(#cloud-blur)"
+          opacity="0.5"
+        />
+
+        <!-- Nuvem 3 - centro esquerda -->
+        <ellipse
+          cx="3%"
+          cy="40%"
+          rx="45"
+          ry="28"
+          fill="#d8d8d8"
+          filter="url(#cloud-blur)"
+          opacity="0.3"
+        />
+
+        <!-- Nuvem 4 - centro direita -->
+        <ellipse
+          cx="95%"
+          cy="45%"
+          rx="55"
+          ry="30"
+          fill="#d8d8d8"
+          filter="url(#cloud-blur)"
+          opacity="0.4"
+        />
+
+        <!-- Nuvem 5 - fundo esquerda -->
+        <ellipse
+          cx="12%"
+          cy="88%"
+          rx="65"
+          ry="32"
+          fill="#d8d8d8"
+          filter="url(#cloud-blur)"
+          opacity="0.4"
+        />
+
+        <!-- Nuvem 6 - fundo direita -->
+        <ellipse
+          cx="85%"
+          cy="92%"
+          rx="50"
+          ry="28"
+          fill="#d8d8d8"
+          filter="url(#cloud-blur)"
+          opacity="0.3"
+        />
+      </svg>
+
+      <!-- Partículas decorativas -->
+      <div class="particle particle-1"></div>
+      <div class="particle particle-2"></div>
+      <div class="particle particle-3"></div>
+      <div class="particle particle-4"></div>
+      <div class="particle particle-5"></div>
+      <div class="particle particle-6"></div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="login-content">
+      <!-- Logo/Título -->
+      <div class="logo-section">
+        <h1 class="logo-title">OVERFLOW</h1>
+        <p class="logo-subtitle">Bem-vindo de volta!</p>
+      </div>
+
+      <!-- Card de Login -->
+      <div class="login-card">
+        <h2 class="card-title">Entrar na plataforma</h2>
+
+        <!-- Formulário -->
+        <form class="login-form" (ngSubmit)="onLogin($event)">
+          <!-- Campo Username/Email -->
+          <div class="form-group">
+            <label class="form-label">Username ou Email</label>
+            <div class="input-wrapper">
+              <svg
+                class="input-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect width="20" height="16" x="2" y="4" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              <input
+                type="text"
+                [(ngModel)]="username"
+                name="username"
+                placeholder="Digite seu username ou email"
+                class="form-input"
+              />
+            </div>
+          </div>
+
+          <!-- Campo Senha -->
+          <div class="form-group">
+            <label class="form-label">Senha</label>
+            <div class="input-wrapper">
+              <svg
+                class="input-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              <input
+                type="password"
+                [(ngModel)]="password"
+                name="password"
+                placeholder="Digite sua senha"
+                class="form-input"
+              />
+            </div>
+          </div>
+
+          <!-- Lembrar senha e Esqueci minha senha -->
+          <div class="form-options">
+            <label class="checkbox-wrapper">
+              <input
+                type="checkbox"
+                [(ngModel)]="rememberMe"
+                name="rememberMe"
+                class="checkbox-input"
+              />
+              <span class="checkbox-label">Lembrar senha</span>
+            </label>
+            <button
+              type="button"
+              class="forgot-password"
+              (click)="forgotPassword()"
+            >
+              Esqueci minha senha
+            </button>
+          </div>
+
+          <!-- Botão Entrar -->
+          <button type="submit" class="btn-login">Entrar</button>
+        </form>
+
+        <!-- Divider -->
+        <div class="divider">
+          <div class="divider-line"></div>
+          <span class="divider-text">ou continue com</span>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- Botões Sociais -->
+        <div class="social-buttons">
+          <button class="social-btn" (click)="socialLogin('google')">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="12" r="4" />
+              <line x1="21.17" x2="12" y1="8" y2="8" />
+              <line x1="3.95" x2="8.54" y1="6.06" y2="14" />
+              <line x1="10.88" x2="15.46" y1="21.94" y2="14" />
+            </svg>
+          </button>
+          <button class="social-btn discord" (click)="socialLogin('discord')">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z" />
+            </svg>
+          </button>
+          <button class="social-btn facebook" (click)="socialLogin('facebook')">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Link para Cadastro -->
+        <div class="signup-link">
+          <span class="signup-text">Não tem uma conta? </span>
+          <button class="signup-btn" (click)="navigateToSignup()">
+            Cadastre-se
+          </button>
+        </div>
+      </div>
+
+      <!-- Rodapé Social -->
+      <div class="footer-social">
+        <p class="footer-title">Siga-nos nas redes</p>
+        <div class="footer-icons">
+          <button class="footer-icon-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="12" r="4" />
+              <line x1="21.17" x2="12" y1="8" y2="8" />
+              <line x1="3.95" x2="8.54" y1="6.06" y2="14" />
+              <line x1="10.88" x2="15.46" y1="21.94" y2="14" />
+            </svg>
+          </button>
+          <button class="footer-icon-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m3 21 1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z" />
+            </svg>
+          </button>
+          <button class="footer-icon-btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
