@@ -75,7 +75,7 @@ Thumbs.db
 .env.local
 .env.*.local
 
-#iginorar todos
+#ignorar todos
 node_modules/
 dist/
 build/
