@@ -47,7 +47,8 @@ export class SignupPage {
       tipoUsuario: this.tipoUsuario,
     });
     
-    this.router.navigate(['/entrar']);
+    // Navega para o dashboard após cadastro
+    this.router.navigate(['/dashboard']);
   }
 
   navigateToLogin() {

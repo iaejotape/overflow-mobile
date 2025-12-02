@@ -11,6 +11,7 @@ $color-border: rgba(255, 255, 255, 0.1);
 .adicionar-questao-container {
   min-height: 100vh;
   background: linear-gradient(180deg, $color-primary-dark 0%, darken($color-primary-dark, 3%) 100%);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 // ============ HEADER ============
@@ -19,6 +20,7 @@ $color-border: rgba(255, 255, 255, 0.1);
   justify-content: space-between;
   align-items: center;
   padding: 16px 20px;
+  padding-top: calc(16px + env(safe-area-inset-top));
   background: rgba($color-card-bg, 0.8);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid $color-border;

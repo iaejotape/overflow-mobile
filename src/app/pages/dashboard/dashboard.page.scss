@@ -14,7 +14,8 @@ $color-card-bg: #111631;
 .dashboard-container {
   min-height: 100vh;
   background: $color-primary-dark;
-  padding-bottom: 80px;
+  padding-bottom: calc(80px + env(safe-area-inset-bottom));
+  padding-top: env(safe-area-inset-top);
 }
 
 // Header

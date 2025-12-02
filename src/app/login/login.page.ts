@@ -20,8 +20,8 @@ export class LoginPage {
 
   onLogin(event: Event) {
     event.preventDefault();
-    // Navega para a home após login
-    this.router.navigate(['/home']);
+    // Navega para o dashboard após login
+    this.router.navigate(['/dashboard']);
   }
 
   navigateToSignup() {

@@ -60,3 +60,33 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* ============================================
+ * SAFE AREA - Evita sobreposição com barras do sistema
+ * ============================================ */
+
+// Aplicar safe area em todas as páginas
+ion-content {
+  --padding-top: env(safe-area-inset-top);
+  --padding-bottom: env(safe-area-inset-bottom);
+}
+
+// Para containers principais que precisam respeitar safe area
+.safe-area-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+// Headers devem respeitar a barra de status
+ion-header {
+  padding-top: env(safe-area-inset-top);
+}
+
+// Footers e tab bars devem respeitar os botões de navegação
+ion-footer,
+ion-tab-bar {
+  padding-bottom: env(safe-area-inset-bottom);
+}
