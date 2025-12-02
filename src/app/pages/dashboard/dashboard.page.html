@@ -126,41 +126,44 @@
           Progresso
         </h3>
 
-        <!-- aqui sao os meses -->
-        <div class="progress-months">
-          <span>Jul</span>
-          <span>Ago</span>
-          <span>Set</span>
-          <span>Out</span>
-          <span>Nov</span>
-          <span>Dez</span>
-        </div>
+        <!-- Container com scroll horizontal -->
+        <div class="progress-scroll-container">
+          <!-- aqui sao os meses -->
+          <div class="progress-months">
+            <span>Jul</span>
+            <span>Ago</span>
+            <span>Set</span>
+            <span>Out</span>
+            <span>Nov</span>
+            <span>Dez</span>
+          </div>
 
-        <!-- aqui é o grid de contribuicoes -->
-        <div class="progress-grid">
-          <!-- terca -->
-          <div class="grid-row">
-            <span class="day-label">T</span>
-            <div class="grid-cells">
-              <div class="grid-cell" *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]"></div>
+          <!-- aqui é o grid de contribuicoes -->
+          <div class="progress-grid">
+            <!-- terca -->
+            <div class="grid-row">
+              <span class="day-label">T</span>
+              <div class="grid-cells">
+                <div class="grid-cell" *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]"></div>
+              </div>
             </div>
-          </div>
-          <!-- quinta -->
-          <div class="grid-row">
-            <span class="day-label">Q</span>
-            <div class="grid-cells">
-              <div class="grid-cell" 
-                   *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]"
-                   [class.low]="cell >= 22 && cell <= 24"
-                   [class.medium]="cell === 25"
-                   [class.active]="cell === 26"></div>
+            <!-- quinta -->
+            <div class="grid-row">
+              <span class="day-label">Q</span>
+              <div class="grid-cells">
+                <div class="grid-cell" 
+                     *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]"
+                     [class.low]="cell >= 22 && cell <= 24"
+                     [class.medium]="cell === 25"
+                     [class.active]="cell === 26"></div>
+              </div>
             </div>
-          </div>
-          <!-- sabado -->
-          <div class="grid-row">
-            <span class="day-label">S</span>
-            <div class="grid-cells">
-              <div class="grid-cell" *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]"></div>
+            <!-- sabado -->
+            <div class="grid-row">
+              <span class="day-label">S</span>
+              <div class="grid-cells">
+                <div class="grid-cell" *ngFor="let cell of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26]"></div>
+              </div>
             </div>
           </div>
         </div>

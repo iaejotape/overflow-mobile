@@ -11,7 +11,7 @@ $color-border: rgba(255, 255, 255, 0.1);
 .questoes-container {
   min-height: 100vh;
   background: linear-gradient(180deg, $color-primary-dark 0%, darken($color-primary-dark, 3%) 100%);
-  padding-bottom: calc(100px + env(safe-area-inset-bottom));
+  padding-bottom: 100px;
 }
 
 // ============ HEADER ============
@@ -20,7 +20,6 @@ $color-border: rgba(255, 255, 255, 0.1);
   justify-content: center;
   align-items: center;
   padding: 16px 20px;
-  padding-top: calc(16px + env(safe-area-inset-top));
   background: rgba($color-card-bg, 0.8);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid $color-border;
@@ -417,8 +416,9 @@ $color-border: rgba(255, 255, 255, 0.1);
   right: 0;
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  padding: 12px 16px 20px;
+  align-items: flex-start;
+  padding: 12px 16px;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
   background: rgba($color-card-bg, 0.95);
   backdrop-filter: blur(20px);
   border-top: 1px solid $color-border;

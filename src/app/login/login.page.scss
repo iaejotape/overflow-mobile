@@ -23,8 +23,6 @@ $color-facebook: #1877f2;
   align-items: center;
   justify-content: center;
   padding: 16px;
-  padding-top: calc(16px + env(safe-area-inset-top));
-  padding-bottom: calc(16px + env(safe-area-inset-bottom));
   box-sizing: border-box;
 }
 

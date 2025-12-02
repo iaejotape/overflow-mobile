@@ -3,17 +3,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
   appName: 'Overflow',
-  webDir: 'www',
-  android: {
-    // Garantir que o conteúdo não fique atrás das barras do sistema
-    backgroundColor: '#0c0f3f'
-  },
-  plugins: {
-    StatusBar: {
-      style: 'LIGHT',
-      backgroundColor: '#0c0f3f'
-    }
-  }
+  webDir: 'www'
 };
 
 export default config;

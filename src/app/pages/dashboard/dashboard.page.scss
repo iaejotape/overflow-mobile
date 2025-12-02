@@ -14,8 +14,7 @@ $color-card-bg: #111631;
 .dashboard-container {
   min-height: 100vh;
   background: $color-primary-dark;
-  padding-bottom: calc(80px + env(safe-area-inset-bottom));
-  padding-top: env(safe-area-inset-top);
+  padding-bottom: 80px;
 }
 
 // Header
@@ -218,6 +217,7 @@ $color-card-bg: #111631;
   background: $color-card-bg;
   border-radius: 16px;
   padding: 16px;
+  overflow: hidden;
   
   .card-title {
     display: flex;
@@ -235,15 +235,31 @@ $color-card-bg: #111631;
     }
   }
 
+  // Container com scroll horizontal
+  .progress-scroll-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    
+    // Ocultar scrollbar mas manter funcionalidade
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
   .progress-months {
     display: flex;
     margin-bottom: 4px;
     margin-left: 14px;
     font-size: 10px;
     color: $color-gray;
+    min-width: max-content;
 
     span {
       flex: 1;
+      min-width: 50px;
       text-align: left;
     }
   }
@@ -252,6 +268,7 @@ $color-card-bg: #111631;
     display: flex;
     flex-direction: column;
     gap: 3px;
+    min-width: max-content;
     
     .grid-row {
       display: flex;
@@ -267,7 +284,6 @@ $color-card-bg: #111631;
       .grid-cells {
         display: flex;
         gap: 3px;
-        flex: 1;
 
         .grid-cell {
           width: 10px;
@@ -600,13 +616,16 @@ $color-card-bg: #111631;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: calc(60px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
   background: $color-primary-dark;
   border-top: 1px solid rgba($color-purple, 0.15);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-around;
-  padding: 0 20px;
+  padding-top: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
   z-index: 1000;
   
   .nav-item {
