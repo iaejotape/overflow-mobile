@@ -2,7 +2,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
-  appName: 'app-overflow',
+  appName: 'Overflow',
   webDir: 'www',
   android: {
     // Garantir que o conteúdo não fique atrás das barras do sistema
