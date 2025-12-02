@@ -1,0 +1,177 @@
+<ion-content [fullscreen]="true" [scrollY]="true">
+  <div class="signup-container">
+    <!-- aqui é o fundo com nuvens -->
+    <div class="cloud-background">
+      <div class="background-overlay"></div>
+      <div class="clouds-container">
+        <img src="/assets/img/nuvem.svg" class="cloud c1">
+        <img src="/assets/img/nuvem.svg" class="cloud c2">
+        <img src="/assets/img/nuvem.svg" class="cloud c3">
+        <img src="/assets/img/nuvem.svg" class="cloud c4">
+        <img src="/assets/img/nuvem.svg" class="cloud c5">
+        <img src="/assets/img/nuvem.svg" class="cloud c6">
+        <img src="/assets/img/nuvem.svg" class="cloud c7">
+        <img src="/assets/img/nuvem.svg" class="cloud c8">
+        <img src="/assets/img/nuvem.svg" class="cloud c9">
+        <img src="/assets/img/nuvem.svg" class="cloud c10">
+        <img src="/assets/img/nuvem.svg" class="cloud c11">
+        <img src="/assets/img/nuvem.svg" class="cloud c12">
+      </div>
+    </div>
+
+    <!-- aqui é o conteudo principal do cadastro -->
+    <div class="signup-content">
+      <!-- aqui é a logo -->
+      <div class="logo-section">
+        <img src="/assets/img/overflow-logo.svg" alt="Logo Overflow" class="logo-img">
+        <h2 class="logo-subtitle">Crie sua conta!</h2>
+      </div>
+
+      <!-- aqui é o card de cadastro -->
+      <div class="signup-card">
+        <h2 class="card-title">Criar nova conta<span class="title-dot">.</span></h2>
+
+        <!-- aqui é o formulario -->
+        <form class="signup-form" (ngSubmit)="onSignup($event)">
+          
+          <!-- aqui é o campo de nome -->
+          <div class="form-group">
+            <label class="form-label">Nome</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+              <input
+                type="text"
+                [(ngModel)]="nome"
+                name="nome"
+                placeholder="Digite seu nome"
+                class="form-input"
+              />
+            </div>
+          </div>
+
+          <!-- aqui é o campo de username -->
+          <div class="form-group">
+            <label class="form-label">Nome de usuário</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/>
+              </svg>
+              <input
+                type="text"
+                [(ngModel)]="username"
+                name="username"
+                placeholder="Digite seu username"
+                class="form-input"
+              />
+            </div>
+          </div>
+
+          <!-- aqui é o campo de email -->
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+              <input
+                type="email"
+                [(ngModel)]="email"
+                name="email"
+                placeholder="Digite seu e-mail"
+                class="form-input"
+              />
+            </div>
+          </div>
+
+          <!-- aqui é o campo de senha -->
+          <div class="form-group">
+            <label class="form-label">Senha</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              <input
+                type="password"
+                [(ngModel)]="senha"
+                name="senha"
+                placeholder="Digite sua senha"
+                class="form-input"
+              />
+            </div>
+          </div>
+
+          <!-- aqui é o campo de confirmar senha -->
+          <div class="form-group">
+            <label class="form-label">Confirmar senha</label>
+            <div class="input-wrapper">
+              <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              <input
+                type="password"
+                [(ngModel)]="confirmarSenha"
+                name="confirmarSenha"
+                placeholder="Confirme sua senha"
+                class="form-input"
+              />
+            </div>
+          </div>
+
+          <!-- aqui é a escolha do tipo de usuario -->
+          <div class="form-group">
+            <label class="form-label">Tipo de usuário</label>
+            <div class="user-type-group">
+              <label class="type-option" [class.selected]="tipoUsuario === 'estudante'">
+                <input type="radio" [(ngModel)]="tipoUsuario" name="tipoUsuario" value="estudante" class="radio-input">
+                <span class="type-icon">
+                    <img src="assets/img/estudante.svg" alt="student icon" class="student-icon">
+                </span>
+                <span class="type-label">Estudante</span>
+              </label>
+              <label class="type-option" [class.selected]="tipoUsuario === 'professor'">
+                <input type="radio" [(ngModel)]="tipoUsuario" name="tipoUsuario" value="professor" class="radio-input">
+                <span class="type-icon">
+                    <img src="assets/img/professor.svg" alt="professor icon" class="professor-icon">
+                </span>
+                <span class="type-label">Professor</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- aqui é o checkbox dos termos -->
+          <div class="terms-wrapper">
+            <label class="checkbox-wrapper">
+              <input
+                type="checkbox"
+                [(ngModel)]="aceitaTermos"
+                name="aceitaTermos"
+                class="checkbox-input"
+              />
+              <span class="checkbox-label">
+                Eu aceito os <button type="button" class="link-btn" (click)="openTerms()">Termos e Condições</button>
+              </span>
+            </label>
+          </div>
+
+          <!-- aqui é o botao de criar conta -->
+          <button type="submit" class="btn-signup">Criar Conta</button>
+        </form>
+
+        <!-- aqui é o link pra login -->
+        <div class="login-link">
+          <span class="login-text">Já tem uma conta? </span>
+          <button type="button" class="login-btn" (click)="navigateToLogin()">
+            Entrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

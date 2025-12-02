@@ -1,0 +1,258 @@
+<ion-content [fullscreen]="true" [scrollY]="true">
+  <div class="questoes-container">
+
+    <!-- aqui é o header -->
+    <header class="page-header">
+      <img src="assets/img/overflow-logo.svg" alt="Overflow" class="header-logo">
+    </header>
+
+    <!-- aqui é o conteudo principal -->
+    <main class="page-content">
+
+      <!-- aqui é o titulo da pagina -->
+      <div class="page-title">
+        <h1>Questões</h1>
+        <p class="subtitle">Desafios para você praticar</p>
+      </div>
+
+      <!-- aqui é o filtro de categorias -->
+      <div class="categories-filter">
+        <button class="category-chip active">Todas</button>
+        <button class="category-chip">Matemática</button>
+        <button class="category-chip">Lógica</button>
+        <button class="category-chip">Strings</button>
+        <button class="category-chip">Arrays</button>
+        <button class="category-chip">Algoritmos</button>
+      </div>
+
+      <!-- aqui sao os cards de estatisticas -->
+      <div class="stats-row">
+        <!-- aqui é o progresso -->
+        <div class="stat-card progress-stat">
+          <div class="progress-ring">
+            <svg viewBox="0 0 100 100">
+              <circle class="bg" cx="50" cy="50" r="40"/>
+              <circle class="progress" cx="50" cy="50" r="40" stroke-dasharray="251.2" stroke-dashoffset="150"/>
+            </svg>
+            <div class="progress-text">
+              <span class="percent">40%</span>
+              <span class="label">Finalizado</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- aqui é o top 3 rank -->
+        <div class="stat-card rank-stat">
+          <h3>Top 3 - Rank</h3>
+          <div class="rank-list">
+            <div class="rank-item">
+              <span class="medal gold">🥇</span>
+              <span class="name">OverFlows</span>
+              <span class="pts">100Pts</span>
+            </div>
+            <div class="rank-item">
+              <span class="medal silver">🥈</span>
+              <span class="name">Fulanos</span>
+              <span class="pts">90Pts</span>
+            </div>
+            <div class="rank-item">
+              <span class="medal bronze">🥉</span>
+              <span class="name">Sicranos</span>
+              <span class="pts">70Pts</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- aqui é o card de envios corretos -->
+      <div class="envios-card">
+        <div class="envios-ring">
+          <svg viewBox="0 0 100 100">
+            <circle class="bg" cx="50" cy="50" r="40"/>
+            <circle class="progress" cx="50" cy="50" r="40" stroke-dasharray="251.2" stroke-dashoffset="70"/>
+          </svg>
+          <div class="check-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+          </div>
+        </div>
+        <div class="envios-info">
+          <span class="envios-label">Envios Corretos</span>
+          <span class="envios-value">26/36</span>
+        </div>
+      </div>
+
+      <!-- aqui é a lista de questoes -->
+      <div class="questoes-list">
+        <h2 class="section-title">Questões Disponíveis</h2>
+
+        <!-- questao 1 -->
+        <div class="questao-card">
+          <h3 class="questao-titulo">Dê um Oii para a Plataforma!</h3>
+          <p class="questao-descricao">Crie um código simples na linguagem que preferir para cumprimentar a plataforma!🖐</p>
+          <div class="questao-footer">
+            <div class="questao-meta">
+              <span class="autor">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+                Por IsacBM
+              </span>
+              <span class="envios">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2L11 13"/>
+                  <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
+                </svg>
+                350 Envios Corretos
+              </span>
+            </div>
+            <div class="questao-tags">
+              <span class="tag categoria">Boas Vindas</span>
+              <span class="tag dificuldade facil">Fácil</span>
+              <span class="tag xp">+5 Pts</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- questao 2 -->
+        <div class="questao-card">
+          <h3 class="questao-titulo">Área do Círculo</h3>
+          <p class="questao-descricao">Ajude o Sr. Isac a descobrir a área total da sua nova mesa redonda!🎯✨</p>
+          <div class="questao-footer">
+            <div class="questao-meta">
+              <span class="autor">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+                Por Jotapê
+              </span>
+              <span class="envios">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2L11 13"/>
+                  <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
+                </svg>
+                222 Envios Corretos
+              </span>
+            </div>
+            <div class="questao-tags">
+              <span class="tag categoria">Matématica</span>
+              <span class="tag dificuldade intermediario">Intermediário</span>
+              <span class="tag xp">+15 Pts</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- questao 3 -->
+        <div class="questao-card">
+          <h3 class="questao-titulo">Angry Ducks</h3>
+          <p class="questao-descricao">Ajude os Duckneses a ganhar a guerra contra os Nlogoneses através de um código e patos!🦆</p>
+          <div class="questao-footer">
+            <div class="questao-meta">
+              <span class="autor">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+                Por Priscila
+              </span>
+              <span class="envios">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2L11 13"/>
+                  <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
+                </svg>
+                127 Envios Corretos
+              </span>
+            </div>
+            <div class="questao-tags">
+              <span class="tag categoria">Matématica</span>
+              <span class="tag dificuldade intermediario">Intermediário</span>
+              <span class="tag xp">+25 Pts</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- questao 4 -->
+        <div class="questao-card">
+          <h3 class="questao-titulo">Digitando no Telefone Celular</h3>
+          <p class="questao-descricao">Simule a digitação de um teclado numérico de celular antigo!📱</p>
+          <div class="questao-footer">
+            <div class="questao-meta">
+              <span class="autor">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+                Por Diogo B
+              </span>
+              <span class="envios">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2L11 13"/>
+                  <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
+                </svg>
+                89 Envios Corretos
+              </span>
+            </div>
+            <div class="questao-tags">
+              <span class="tag categoria">Strings</span>
+              <span class="tag dificuldade dificil">Difícil</span>
+              <span class="tag xp">+40 Pts</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- aqui é o botao de nova questao -->
+    <button class="fab-button" (click)="novaQuestao()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="12" y1="5" x2="12" y2="19"/>
+        <line x1="5" y1="12" x2="19" y2="12"/>
+      </svg>
+      <span>Nova Questão</span>
+    </button>
+
+    <!-- aqui é o menu de navegacao -->
+    <nav class="bottom-nav">
+      <button class="nav-item" (click)="navegarPara('home')">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        </svg>
+      </button>
+      <button class="nav-item active">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C8.5 2 5 5.5 5 10c0 4.5 3 7 5 9.5.5.6 1.2 1 2 1s1.5-.4 2-1c2-2.5 5-5 5-9.5 0-4.5-3.5-8-7-8z"/>
+          <path d="M12 21v2" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M10 23h4" stroke="currentColor" stroke-width="2" fill="none"/>
+        </svg>
+      </button>
+      <button class="nav-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+          <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+          <path d="M4 22h16"/>
+          <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+        </svg>
+      </button>
+      <button class="nav-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M4 20h16"/>
+          <rect x="4" y="12" width="3" height="8"/>
+          <rect x="10" y="8" width="3" height="12"/>
+          <rect x="16" y="4" width="3" height="16"/>
+        </svg>
+      </button>
+      <button class="nav-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </button>
+    </nav>
+
+  </div>
+</ion-content>

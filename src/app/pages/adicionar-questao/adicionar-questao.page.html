@@ -1,0 +1,143 @@
+<ion-content [fullscreen]="true" [scrollY]="true">
+  <div class="adicionar-questao-container">
+
+    <!-- aqui é o header -->
+    <header class="page-header">
+      <button class="back-btn" (click)="voltar()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5"/>
+          <polyline points="12 19 5 12 12 5"/>
+        </svg>
+      </button>
+      <h1 class="header-title">Nova Questão</h1>
+      <div class="header-spacer"></div>
+    </header>
+
+    <!-- aqui é o formulario -->
+    <main class="form-content">
+
+      <!-- aqui é o campo titulo -->
+      <div class="form-group">
+        <label class="form-label">Título da Questão</label>
+        <input 
+          type="text" 
+          class="form-input" 
+          placeholder="Ex: Área do Círculo"
+        >
+      </div>
+
+      <!-- aqui é o campo enunciado -->
+      <div class="form-group">
+        <label class="form-label">Enunciado</label>
+        <textarea 
+          class="form-textarea" 
+          rows="4" 
+          placeholder="Descreva o problema detalhadamente..."
+        ></textarea>
+      </div>
+
+      <!-- aqui é o campo linguagem -->
+      <div class="form-group">
+        <label class="form-label">Linguagem de Programação</label>
+        <div class="select-wrapper">
+          <select class="form-select">
+            <option value="">Selecione uma linguagem</option>
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript</option>
+            <option value="java">Java</option>
+            <option value="c">C</option>
+            <option value="cpp">C++</option>
+            <option value="csharp">C#</option>
+            <option value="php">PHP</option>
+            <option value="ruby">Ruby</option>
+            <option value="go">Go</option>
+            <option value="rust">Rust</option>
+          </select>
+          <svg class="select-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- aqui é o campo categoria -->
+      <div class="form-group">
+        <label class="form-label">Categoria</label>
+        <div class="chips-container">
+          <button 
+            *ngFor="let cat of categorias" 
+            class="chip" 
+            [class.active]="categoriaSelecionada === cat"
+            (click)="selecionarCategoria(cat)">
+            {{ cat }}
+          </button>
+        </div>
+      </div>
+
+      <!-- aqui é o campo dificuldade -->
+      <div class="form-group">
+        <label class="form-label">Nível de Dificuldade</label>
+        <div class="difficulty-chips">
+          <button 
+            class="difficulty-chip facil" 
+            [class.active]="dificuldadeSelecionada === 'facil'"
+            (click)="selecionarDificuldade('facil')">
+            <span class="dot"></span>
+            Fácil
+          </button>
+          <button 
+            class="difficulty-chip medio" 
+            [class.active]="dificuldadeSelecionada === 'medio'"
+            (click)="selecionarDificuldade('medio')">
+            <span class="dot"></span>
+            Médio
+          </button>
+          <button 
+            class="difficulty-chip dificil" 
+            [class.active]="dificuldadeSelecionada === 'dificil'"
+            (click)="selecionarDificuldade('dificil')">
+            <span class="dot"></span>
+            Difícil
+          </button>
+        </div>
+      </div>
+
+      <!-- aqui é o campo xp -->
+      <div class="form-group">
+        <label class="form-label">Pontuação (XP)</label>
+        <div class="xp-input-wrapper">
+          <input 
+            type="number" 
+            class="form-input xp-input" 
+            placeholder="10"
+            min="1"
+            max="100"
+          >
+          <span class="xp-suffix">Pts</span>
+        </div>
+        <span class="form-hint">Entre 1 e 100 pontos</span>
+      </div>
+
+      <!-- aqui é o campo resultado esperado -->
+      <div class="form-group">
+        <label class="form-label">Resultado Esperado</label>
+        <textarea 
+          class="form-textarea code-textarea" 
+          rows="3" 
+          placeholder="Ex: 3.14159..."
+        ></textarea>
+        <span class="form-hint">O que o código deve retornar como saída</span>
+      </div>
+
+      <!-- aqui é o botao de adicionar -->
+      <button class="submit-btn" (click)="adicionarQuestao()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 2L11 13"/>
+          <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
+        </svg>
+        Adicionar Questão
+      </button>
+
+    </main>
+
+  </div>
+</ion-content>

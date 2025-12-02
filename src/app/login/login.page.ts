@@ -25,7 +25,7 @@ export class LoginPage {
   }
 
   navigateToSignup() {
-    this.router.navigate(['/signup']);
+    this.router.navigate(['/cadastrar']);
   }
 
   forgotPassword() {
