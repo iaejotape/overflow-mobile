@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IonContent } from '@ionic/angular/standalone';
+import { NavigationService } from '../../services/navigation.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -36,10 +37,12 @@ export class DashboardPage implements OnInit {
   // Progresso mensal (simulado)
   progressoMeses = ['Dez', 'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
 
-  // Menu ativo
-  menuAtivo: string = 'home';
+  // Menu ativo via serviço
+  get menuAtivo(): string {
+    return this.navService.menuAtivo;
+  }
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public navService: NavigationService) {}
 
   ngOnInit() {
     this.getGreeting();
@@ -59,12 +62,7 @@ export class DashboardPage implements OnInit {
   }
 
   navegarPara(rota: string) {
-    this.menuAtivo = rota;
-    if (rota === 'questoes') {
-      this.router.navigate(['/questoes']);
-    } else {
-      console.log('Navegar para:', rota);
-    }
+    this.navService.navegarPara(rota);
   }
 
   abrirConfiguracoes() {

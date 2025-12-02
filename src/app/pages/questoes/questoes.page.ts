@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { IonContent } from '@ionic/angular/standalone';
+import { NavigationService } from '../../services/navigation.service';
 
 @Component({
   selector: 'app-questoes',
@@ -11,19 +12,15 @@ import { IonContent } from '@ionic/angular/standalone';
   imports: [IonContent, CommonModule]
 })
 export class QuestoesPage {
-  menuAtivo: string = 'questoes';
+  // Menu ativo via serviço
+  get menuAtivo(): string {
+    return this.navService.menuAtivo;
+  }
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public navService: NavigationService) {}
 
   navegarPara(rota: string) {
-    this.menuAtivo = rota;
-    if (rota === 'home') {
-      this.router.navigate(['/dashboard']);
-    } else if (rota === 'questoes') {
-      // Já está na página
-    } else {
-      console.log('Navegar para:', rota);
-    }
+    this.navService.navegarPara(rota);
   }
 
   novaQuestao() {
