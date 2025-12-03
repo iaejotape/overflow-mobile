@@ -280,14 +280,72 @@ $color-border: rgba(255, 255, 255, 0.1);
   border: 1px solid $color-border;
   margin-bottom: 14px;
 
+  .questao-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .questao-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+
+    .action-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      &.edit {
+        background: rgba($color-purple, 0.2);
+        color: $color-purple-light;
+
+        &:hover {
+          background: rgba($color-purple, 0.4);
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+
+      &.delete {
+        background: rgba(#ef4444, 0.2);
+        color: #ef4444;
+
+        &:hover {
+          background: rgba(#ef4444, 0.4);
+        }
+
+        &:active {
+          transform: scale(0.95);
+        }
+      }
+    }
+  }
+
   .questao-titulo {
     font-size: 20px;
     font-weight: 600;
     color: $color-purple-light;
-    margin: 0 0 8px 0;
+    margin: 0;
     text-decoration: underline;
     text-underline-offset: 4px;
     cursor: pointer;
+    flex: 1;
 
     &:hover {
       color: lighten($color-purple-light, 10%);
@@ -456,5 +514,131 @@ $color-border: rgba(255, 255, 255, 0.1);
         color: $color-text-primary;
       }
     }
+  }
+}
+
+// ============ MODAL DE EXCLUSÃO ============
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: $color-card-bg;
+  border-radius: 20px;
+  padding: 28px 24px;
+  max-width: 340px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid $color-border;
+  animation: slideUp 0.3s ease;
+
+  .modal-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 16px;
+    background: rgba(#ef4444, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 32px;
+      height: 32px;
+      color: #ef4444;
+    }
+  }
+
+  .modal-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: $color-text-primary;
+    margin: 0 0 12px 0;
+  }
+
+  .modal-message {
+    font-size: 14px;
+    color: $color-text-secondary;
+    margin: 0 0 8px 0;
+    line-height: 1.5;
+
+    strong {
+      color: $color-purple-light;
+    }
+  }
+
+  .modal-warning {
+    font-size: 12px;
+    color: #ef4444;
+    margin: 0 0 20px 0;
+  }
+
+  .modal-actions {
+    display: flex;
+    gap: 12px;
+
+    button {
+      flex: 1;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+
+      &:active {
+        transform: scale(0.97);
+      }
+    }
+
+    .btn-cancelar {
+      background: rgba(255, 255, 255, 0.1);
+      color: $color-text-primary;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+    }
+
+    .btn-excluir {
+      background: #ef4444;
+      color: white;
+
+      &:hover {
+        background: darken(#ef4444, 5%);
+      }
+    }
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
